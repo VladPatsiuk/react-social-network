@@ -7,12 +7,15 @@ const MyPosts = () => {
     <div>
       <div>
         My posts
-        <div>New Post</div>
+        <div>
+          <textarea></textarea>
+          <button>Add post</button>
+        </div>
       </div>
       <div>
-        <Post />
-        <Post />
-        <Post />
+        <Post message="HI, how are you?" likes={15}/>
+        <Post message="ehhh" likes={20}/>
+        
       </div>
     </div>
   );

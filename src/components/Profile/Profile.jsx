@@ -5,9 +5,9 @@ import MyPosts from './MyPosts/MyPosts';
 
 const Profile = () => {
   return (
-    <div className={classes.content}>
+    <div>
           <div>
-            <img src="https://freehtmlthemes.ru/assets/images/articles/css-fon.jpg" alt="" />
+            <img className={classes.background} src="https://freehtmlthemes.ru/assets/images/articles/css-fon.jpg" alt="" />
           </div>
           <div>
             ava + description
