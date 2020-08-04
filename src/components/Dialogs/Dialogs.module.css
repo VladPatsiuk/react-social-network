@@ -7,14 +7,22 @@
   padding: 10px;
 }  
 
-.active {
+a.active {
   color: gold;
 }
 
-.messages {
+.dialog {
+  border: 1px solid grey;
+  padding: 10px;
+}
 
+.messages {
+  
 }
 
 .message {
-  
+  padding: 10px;
+  border-bottom: 1px solid white; 
+  color: #fff;
+  background: blue;
 }
