@@ -2,42 +2,16 @@ import React from 'react';
 import classes from './Users.module.css'
 import userPhoto from '../../assets/img/user_picture.jpg'
 import { NavLink } from 'react-router-dom';
+import Paginator from '../common/Paginator/Paginator';
+import User from './User';
 
-const Users = (props) => {
-
-  let pagesCount = Math.ceil(props.totalUsersCount / props.usersPerPage)
-
-  let array = []
-  for (let i = 1; i <= pagesCount; i++) {
-    array.push(i)
-  }
+const Users = ({currentPage, totalUsersCount, usersPerPage, isFollowingFetching, users, follow, unfollow, onPageChange}) => {
     
   return (
     <div>
-      <div>
-        {array.map(number => <span key={"key#" + number} className={number === props.currentPage ? classes.activePage : ""} onClick={(e) => props.onPageChange(number)}>{number} </span>)}
-      </div>
+      <Paginator currentPage={currentPage} totalUsersCount={totalUsersCount} onPageChange={onPageChange} usersPerPage={usersPerPage} />
       {
-        props.users.map(user => <div key={user.id}>
-          <span>
-            <NavLink to={`profile/${user.id}`}>
-              <img className={classes.img} src={user.photos.small !== null ? user.photos.small : userPhoto} alt="" />
-            </NavLink>
-            <div>
-              <button onClick={() => props.toggleFollow(user.id)}>{user.followed ? "Unfollow" : "Follow"}</button>
-            </div>
-          </span>
-          <span>
-            <span>
-              <div>{user.name}</div>
-              <div>{user.status}</div>
-            </span>
-            <span>  
-            <div>{"user.location.country"}</div>
-            <div>{"user.location.city"}</div>
-            </span>
-          </span>
-        </div>)
+        users.map(user => <User key={user.id} id={user.id} name={user.name} photos={user.photos} status={user.status} followed={user.followed} isFollowingFetching={isFollowingFetching} />)
       }
     </div>
   )

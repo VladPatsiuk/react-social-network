@@ -1,8 +1,23 @@
 .background {
-  height: 150px;
+  height: 200px;
   width: 100%;
+  background: url('https://freehtmlthemes.ru/assets/images/articles/css-fon.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .description {
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile__image {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid blue;
 }

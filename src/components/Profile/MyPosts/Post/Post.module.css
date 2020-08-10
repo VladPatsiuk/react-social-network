@@ -1,9 +1,30 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4px;
+  background: white;
+  margin: 4px;
+}
+
 .item {
-  color: greenyellow;
+  color: black;
+  display: flex;
+  
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 300px;
 }
 
 .item img {
   width: 50px;
   height: auto;
   border-radius: 50%;
+  border: 2px solid blue;
+  margin-right: 30px;
+}
+
+.item span {
+  background: grey;
+  padding: 3px;
 }
